@@ -52,6 +52,17 @@ def print_time_splits_names(mins_in, secs_in, time_name, split_names):
         print(temp_time, "\t", split_names[counter])
 
 
+def write_time_splits_names(mins_in, secs_in, split_names, file_name):
+    file_name = file_name+".txt"
+    with open(file_name, 'w') as f:
+
+        f.write("\n\n"+file_name+": \n")
+        for counter in range(len(split_names)):
+            sec_string = str(secs_in[counter]) if secs_in[counter]>9 else "0"+str(secs_in[counter])
+            temp_time = str(mins_in[counter])+":"+sec_string
+            f.write(temp_time+"\t"+split_names[counter])
+
+
 def get_mins_secs_total(mins_in, secs_in):
     total_mins = sum(mins_in)
     total_secs = sum(secs_in)
@@ -119,13 +130,47 @@ def main():
     secs = tommy_real_secs
 
     gold_mins, gold_secs = adjust_times(mins, secs, 45/41.9166666666666)
-    print_time_splits(gold_mins, gold_secs, "Gold")
-    print_time_total(gold_mins, gold_secs, "Gold")
+    print_time_splits_names(gold_mins, gold_secs, "Gold", split_names)
+    write_time_splits_names(gold_mins, gold_secs, split_names, "Gold Times")
+
+    # print_time_total(gold_mins, gold_secs, "Gold")
+
+
+    silver_mins, silver_secs = adjust_times(mins, secs, 60/41.9166666666666)
+    print_time_splits_names(silver_mins, silver_secs, "Silver", split_names)
+    write_time_splits_names(silver_mins, silver_secs, split_names, "Silver Times")
+
+    # print_time_total(silver_mins, silver_secs, "Silver")
+
+    bronze_mins, bronze_secs = adjust_times(mins, secs, 75/41.9166666666666)
+    print_time_splits_names(bronze_mins, bronze_secs, "Bronze", split_names)
+    write_time_splits_names(bronze_mins, bronze_secs, split_names, "Bronze Times")
+
+    # print_time_total(bronze_mins, bronze_secs, "Bronze")
 
 
     """
     Challenge Times: Gold (40 mins), Silver, (50 mins), Bronze (60 mins)
     """
+
+
+    gold_challenge_mins, gold_challenge_secs = adjust_times(mins, secs, 40/41.9166666666666)
+    print_time_splits_names(gold_challenge_mins, gold_challenge_secs, "Gold", split_names)
+    write_time_splits_names(gold_mins, gold_secs, split_names, "Gold Challenge Times")
+    # print_time_total(gold_challenge_mins, gold_challenge_secs, "Gold")
+
+
+    silver_challenge_mins, silver_challenge_secs = adjust_times(mins, secs, 50/41.9166666666666)
+    print_time_splits_names(silver_challenge_mins, silver_challenge_secs, "Silver", split_names)
+    write_time_splits_names(silver_mins, silver_secs, split_names, "Silver Challenge Times")
+    # print_time_total(silver_challenge_mins, silver_challenge_secs, "Silver")
+
+    bronze_challenge_mins, bronze_challenge_secs = adjust_times(mins, secs, 60/41.9166666666666)
+    print_time_splits_names(bronze_challenge_mins, bronze_challenge_secs, "Bronze", split_names)
+    write_time_splits_names(bronze_mins, bronze_secs, split_names, "Bronze Challenge Times")
+
+    # print_time_total(bronze_challenge_mins, bronze_challenge_secs, "Bronze")
+
 
     print("\n\n")
 
