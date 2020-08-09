@@ -1,6 +1,6 @@
-
-
 Gold Challenge Times.txt: 
+
+Split Time	Split Name
 2:43	Dead Indian
 4:11	West Side Entry
 4:27	1st Peak West

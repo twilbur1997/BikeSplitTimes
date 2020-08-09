@@ -1,6 +1,6 @@
-
-
 Bronze Times.txt: 
+
+Split Time	Split Name
 4:31	Dead Indian
 6:58	West Side Entry
 7:25	1st Peak West
