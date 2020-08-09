@@ -61,6 +61,7 @@ def write_time_splits_names(mins_in, secs_in, split_names, file_name):
             sec_string = str(secs_in[counter]) if secs_in[counter]>9 else "0"+str(secs_in[counter])
             temp_time = str(mins_in[counter])+":"+sec_string
             f.write(temp_time+"\t"+split_names[counter])
+            f.write("\n")
 
 
 def get_mins_secs_total(mins_in, secs_in):
