@@ -122,14 +122,6 @@ def main():
     print_time_splits(gold_mins, gold_secs, "Gold")
     print_time_total(gold_mins, gold_secs, "Gold")
 
-    with open('bike_times.txt', 'w') as f:
-        for m, s in zip(gold_mins, gold_secs):
-            f.write(str(m))
-            f.write("\n")
-            f.write(str(s))
-            f.write("\n")
-
-
 
     """
     Challenge Times: Gold (40 mins), Silver, (50 mins), Bronze (60 mins)
