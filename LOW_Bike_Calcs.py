@@ -57,7 +57,9 @@ def write_time_splits_names(mins_in, secs_in, split_names, file_name):
     with open(file_name, 'w') as f:
 
         f.write(file_name+": \n\n")
-        f.write("Split Time\tSplit Name\n")
+        f.write("Time\tSplit Name\n")
+        f.write("================\n")
+
         for counter in range(len(split_names)):
             sec_string = str(secs_in[counter]) if secs_in[counter]>9 else "0"+str(secs_in[counter])
             temp_time = str(mins_in[counter])+":"+sec_string
